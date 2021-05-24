@@ -1,0 +1,21 @@
+<br>
+<div *ngIf="user">
+  <h2 class="page-header">{{user.name}}</h2>
+<!-- <div class="form-group">
+ <ul class="list-group">
+    <li class="list-group-item">Username: {{user.username}}</li>
+    <li class="list-group-item">Email: {{user.email}}</li>
+  </ul>  
+</div> -->
+  
+<form>
+  <fieldset>
+<div class="form-group">
+ 
+  <label for="exampleInputEmail1" class="form-label mt-4">User Information</label>
+  <li class="list-group-item">Username: {{user.username}}</li>
+  <li class="list-group-item">Email: {{user.email}}</li>  
+</div>
+</fieldset>
+</form>
+</div>  

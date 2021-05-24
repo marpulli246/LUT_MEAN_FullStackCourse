@@ -1,0 +1,163 @@
+  <head> 
+   <!--link rel="stylesheet" type="text/css" href="styles.css"-->
+   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+   <link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
+   <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+  </head> 
+  <br>
+
+ 
+
+  <h4>World Cities</h4>
+    <br>
+   
+
+  <div class="d-flex flex-row justify-content-evenly bd-highlight mb-2">
+
+
+   <div *ngIf="data">
+      <div class="card text-white bg-success mb-2" style="max-width: 10rem;">
+        <div class="card-header">Tokyo</div>
+        <div class="card-body">
+          <h1 class="card-text center">55</h1>
+        </div>       
+      </div>
+   </div>
+
+    <div class="card text-white bg-success mb-2" style="max-width: 10rem;">
+      <div class="card-header">Mumbai</div>
+      <div class="card-body">
+        <h2 class="card-text center">77</h2>
+      </div>
+    </div>
+
+    <div class="card text-white bg-success mb-2" style="max-width: 10rem;">
+      <div class="card-header">Melbourne</div>
+      <div class="card-body">
+        <h2 class="card-text center">56</h2>
+      </div>
+    </div>
+
+    <div class="card text-white bg-success mb-2" style="max-width: 10rem;">
+      <div class="card-header">Sao Paulo</div>
+      <div class="card-body">
+        <h2 class="card-text center">56</h2>
+      </div>
+    </div>
+
+    <div class="card text-white bg-success mb-2" style="max-width: 10rem;">
+      <div class="card-header">Mexico City</div>
+      <div class="card-body">
+        <h2 class="card-text center">56</h2>
+      </div>
+    </div>
+
+    <div class="card text-white bg-success mb-2" style="max-width: 10rem;">
+      <div class="card-header">New York</div>
+      <div class="card-body">
+        <h2 class="card-text center">56</h2>
+      </div>
+    </div>
+
+    <div class="card text-white bg-success mb-2" style="max-width: 10rem;">
+      <div class="card-header">Los Angeles</div>
+      <div class="card-body">
+        <h2 class="card-text center">56</h2>
+      </div>
+    </div>
+
+    <div class="card text-white bg-success mb-2" style="max-width: 10rem;">
+      <div class="card-header">Paris</div>
+      <div class="card-body">
+        <h2 class="card-text center">56</h2>
+      </div>
+    </div>
+
+    <div class="card text-white bg-success mb-2" style="max-width: 10rem;">
+      <div class="card-header">London</div>
+      <div class="card-body">
+        <h2 class="card-text center">56</h2>
+      </div>
+    </div>
+
+    <div class="card text-white bg-success mb-2" style="max-width: 10rem;">
+      <div class="card-header">Istanbul</div>
+      <div class="card-body">
+        <h2 class="card-text center">56</h2>
+      </div>
+    </div>
+
+    </div>
+ 
+    <br>
+    <h4>Show specific city data</h4> 
+
+    <form (submit)="onSearchSubmit()">
+      <div class="form-group">
+        <label>City</label>
+        <input type="text" class="form-control" [(ngModel)]="city" name="city">
+      </div>
+      <input type="submit" class="btn btn-primary" value="Search">
+    </form>
+
+    <br>
+
+    <div class="d-flex flex-row justify-content-evenly bd-highlight mb-3">
+      <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+        <div class="card-header">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+            <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"/>
+          </svg>  Environmental conditions
+        </div>
+        <div *ngIf="data">
+         <div class="card-body">
+           
+           <h5 class="card-title">Latest available data</h5>
+           <p class="card-text"> Date: {{data.current.pollution.ts | date}}</p>
+           <p class="card-text"> Time: {{data.current.pollution.ts | date:'shortTime'}}</p>
+           <p class="card-text">AQI: {{data.current.pollution.aqius}}</p>
+           <p class="card-text">Temperature: {{data.current.weather.tp}} <span id="AirQ_T"></span> C</p>
+           <p class="card-text">Pressure: {{data.current.weather.pr}}<span id="AirQ_Pres"></span> mbar</p>
+           <p class="card-text">Wind speed: {{data.current.weather.ws}}<span id="AirQ_WS"></span> m/s</p>
+           <p class="card-text">Wind diretion: {{data.current.weather.wd}} <span id="AirQ_WD"></span> deg</p>
+           
+         </div>
+        </div>
+      </div>
+
+      <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+        <div class="card-header">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-globe2" viewBox="0 0 16 16">
+            <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287V1.077zM4.249 3.539c.142-.384.304-.744.481-1.078a6.7 6.7 0 0 1 .597-.933A7.01 7.01 0 0 0 3.051 3.05c.362.184.763.349 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9.124 9.124 0 0 1-1.565-.667A6.964 6.964 0 0 0 1.018 7.5h2.49zm1.4-2.741a12.344 12.344 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332zM8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.612 13.612 0 0 1 7.5 10.91V8.5H4.51zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741H8.5zm-3.282 3.696c.12.312.252.604.395.872.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964A13.36 13.36 0 0 1 3.508 8.5h-2.49a6.963 6.963 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855.143-.268.276-.56.395-.872A12.63 12.63 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5a6.963 6.963 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008h2.49zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343a7.765 7.765 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"/>
+          </svg>  City Data
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">City Details</h5>
+          <p class="card-text">Population: 5 000 000</p>
+          <p class="card-text">Area Size:</p>
+          <p class="card-text">Population density:</p>
+          <p class="card-text">Coordinates:</p>
+        </div>
+     </div>
+
+      <div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
+        <div class="card-header">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+          </svg>  Area Info
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Trend</h5>
+          <p class="card-text">Currently air quality is trending average.</p>
+        </div>
+      </div>
+    </div>
+    <!--script type="text/javascript" src="./dashboard.component.ts"></script-->
+
+    <h4>Map of the area</h4> 
+
+
+
+
