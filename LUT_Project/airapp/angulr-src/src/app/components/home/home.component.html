@@ -1,0 +1,65 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<div class="jumbotron text-center">
+  <br>
+  <br>
+  <h1>Air Quality Around The World</h1>
+  <br>
+  <p class="lead">Study air pollution around the world.</p>
+  <br>
+  <body background-image= "/background33.jpg"></body>
+  <div>
+    <a class="btn btn-primary btn-lg" [routerLink]="['/dashboard']">Dashboard</a> 
+  </div>
+</div>
+<br>
+<br>
+
+<div id="worldphotos" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="5">
+      <img src="../../assets/img/background13.jpg" class="d-block w-100" alt="First slide">
+    </div>
+    <div class="carousel-item" data-bs-interval="5">
+      <img src="../../assets/img/background21.jpg" class="d-block w-100" alt="Second slide">
+    </div>
+    <div class="carousel-item" data-bs-interval="5">
+      <img src="../../assets/img/background33.jpg" class="d-block w-100" alt="Third slide">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- <carousel-component >
+  <div class="item-carousel">a</div>
+  <div class="item-carousel">
+      <div class="b">
+          <img/>
+          <img src="../../assets/img/background13.jpg" class="d-block w-100" alt="First slide">
+          <img src="../../assets/img/background21.jpg" class="d-block w-100" alt="Second slide">
+          <img src="../../assets/img/background33.jpg" class="d-block w-100" alt="Third slide">
+      </div>
+  </div>
+  <div class="item-carousel">c</div>
+  <div class="item-carousel">d</div>
+</carousel-component> -->
+
+
+</html>
+
